@@ -20,12 +20,7 @@ async function main(){
     const capsuleObj = (capsule_param.has('capsule')) ? await getCapsule(capsule_param.get('capsule')) : "Error: Wrong params"
 
     console.log(capsuleObj)
-    const capsuleDate = new Date(capsuleObj.date).toLocaleString("en-GB", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-        timeZone: 'EST',
-    })
+    const capsuleDate = new Date(capsuleObj.date)
     const capsuleCreation = new Date(capsuleObj.creation_date).toLocaleString("en-GB", {
         day: "numeric",
         month: "short",
@@ -46,6 +41,8 @@ async function main(){
         let now = new Date().getTime();
         let distance = capsuleDate - now;
    
+        
+
         capsuleUnlocked = (distance > 0 ) ? false : true
         
 
@@ -54,6 +51,10 @@ async function main(){
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const countdownElement = document.getElementsByClassName("capsuleCountdown")[0]
+
+            countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"
 
             console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s")
         } else {
