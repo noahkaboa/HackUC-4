@@ -1,0 +1,33 @@
+html, body {
+    width: 100%;
+    overflow-x: clip;
+    background-color: #242424;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 5vw;
+    margin: 1.5vw;
+}
+
+.grid {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    text-align: center;
+    color: white;
+}
+
+.cylinder {
+    width: 20vw;
+    height: 28vw;
+    border-radius: 100% / 80px;
+    background: 
+      radial-gradient(50% 40px at 50% 40px, #0003 99.99%, #0000 0),
+      radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
+      lightgray;
+    margin: auto;
+}
