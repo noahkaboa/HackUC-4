@@ -1,28 +1,52 @@
-// "qdpeoh" : {
-//     "title": "A letter to senior me",
-//     "text": "Hello future me. I'm currently writing this letter as a freshman. I'm so nervous for high school! I'm leaving all my middle school friends behind, and I don't know anyone here at AIT! I hope you are doing well as a sophomore. ",
-//     "img_link": "https://clipart.info/images/ccovers/1516250282red-heart-emoji.png",
-//     "date": new Date(2021, 9, 8, 19, 15)
-//   },
-//   "ptolrj" : {
-//     "title": "Hello to the judges",
-//     "text": "Hello judges. If this has worked correctly, you will be reading this at 7:15 tonight. ",
-//     "img_link": "https://th.bing.com/th/id/OIP.gY0EtARlSLAtWAZ63k82dAHaFj?rs=1&pid=ImgDetMain",
-//     "date": new Date(2023, 12, 9, 19, 15)
-//   },
-//   "ktaaio" : {
-//     "title": "Ten Year Reunion",
-//     "text": "It's been ten years since we've graduated. Noone will see this anyway",
-//     "img_link": "https://www.pinclipart.com/picdir/big/116-1169222_crying-emoji-png-clipart-face-with-tears-of.png",
-//     "date": new Date(2033, 12, 7)
-//   }
+
 
 async function getCapsule(capsule_id){
     const url = new URL("https://time.noahkaboa.workers.dev/")
     url.searchParams.set("capsule", capsule_id)
-    
+
+    const capsules = ["qdpeoh", "ptolrj", "ktaaio"]
+    if (!capsules.includes(capsule_id)){
+        alert("Error! Not a valid time capsule")
+    }
+
     const capsule = await fetch(url).then(r => r.text())
     return JSON.parse(capsule)
 }
 
-getCapsule("qdpeoh")
+
+
+const capsule_param = new URLSearchParams(window.location.search);
+
+const capsuleObj = (capsule_param.has('capsule')) ? getCapsule(capsule_param.get('capsule')) : "Error: Wrong params"
+
+
+const capsuleDate = capsuleObj.date
+const capsuleCreation = capsuleObj.creation_date
+const capsuleTitle = capsuleObj.title
+const capsuleText = capsuleObj.text
+const capsuleImg = capsuleObj.img_link
+
+let capsuleUnlocked = false
+
+var countdown = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = capsuleDate - now;
+
+    capsuleUnlocked = (distance > 0 ) ? false : true
+
+    if (!capsuleUnlocked){
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    } else {
+        clearInterval(countdown)
+        //edit and unlock
+
+        
+
+    }
+
+}, 1000)
+
+console.log(getCapsule("ktaaio"))
