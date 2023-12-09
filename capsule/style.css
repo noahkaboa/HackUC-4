@@ -111,4 +111,10 @@ h3 {
     background-color: lightcyan;
     padding: 1vw;
     border-radius: 10px;
+    width: 100px;
+    object-fit: cover;
+}
+.capsuleImage img {
+    object-fit: cover;
+    width: 100px;
 }
