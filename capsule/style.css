@@ -21,6 +21,10 @@ h1 {
     color: white;
 }
 
+.grid * {
+    margin: .5vw;
+}
+
 .cylinder {
     width: 20vw;
     height: 28vw;
@@ -30,4 +34,44 @@ h1 {
       radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
       lightgray;
     margin: auto;
+    margin-bottom: 1.5vw;
+}
+
+.viewCapsule {
+    margin: 5vw auto;
+}
+
+.header {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 4vw;
+    margin: 0;
+}
+
+h3 {
+    font-size: 3vw;
+    margin: 0;
+}
+
+.capsuleStuff {
+    display: grid;
+    width: 90%;
+    margin: 2vw auto;
+    grid-gap: 1vw;
+    grid-template-columns: 1fr 1fr;
+}
+
+.capsuleText {
+    background-color: bisque;
+    padding: 1vw;
+    border-radius: 10px;
+}
+
+.capsuleImage {
+    background-color: lightcyan;
+    padding: 1vw;
+    border-radius: 10px;
 }
