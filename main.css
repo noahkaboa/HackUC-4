@@ -4,7 +4,7 @@ html, body {
     background-color: #242424;
 }
 
-/* title font faces */
+/* font faces */
 
 @font-face {
     font-family: insanibu;
@@ -26,7 +26,10 @@ html, body {
     src: url(fonts/Gobold\ Bold.otf);
 }
 
-/* body font faces */
+@font-face {
+    font-family: comfortaa;
+    src: url(fonts/Comfortaa-VariableFont_wght.ttf);
+}
 
 
 /* text */

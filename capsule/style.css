@@ -101,6 +101,14 @@ h3 {
     grid-template-columns: 1fr 1fr;
 }
 
+.capsuleCountdown {
+    color: white;
+    margin: 7vw auto;
+    text-align: center;
+    font-size: 7vw;
+    font-family: comfortaa;
+}
+
 .capsuleText {
     background-color: bisque;
     padding: 1vw;
