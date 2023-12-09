@@ -11,22 +11,28 @@
     <h1> Select a time capsule! </h1>
 
     <div class="grid">
-        <div class="item capsule1">
-            <div class="cylinder"></div>
+        <div class="capsule1">
+            <a href="?capsule=qdpeoh">
+                <div class="cylinder"></div>
+            </a>
             <h4> Title </h4>
             <h5 class="createDate"> Creation Date </h5>
             <h5 class="openDate"> Open Date </h5>
         </div>
-
+        
         <div class="capsule2">
-            <div class="cylinder"></div>
+            <a href="?capsule=ptolrj">
+                <div class="cylinder"></div>
+            </a>
             <h4> Title </h4>
             <h5 class="createDate"> Creation Date </h5>
             <h5 class="openDate"> Open Date </h5>
         </div>
         
         <div class="capsule3">
-            <div class="cylinder"></div>
+            <a href="?capsule=ktaaio">
+                <div class="cylinder"></div>
+            </a>
             <h4> Title </h4>
             <h5 class="createDate"> Creation Date </h5>
             <h5 class="openDate"> Open Date </h5>
@@ -35,8 +41,8 @@
 
     <div class="viewCapsule">
         <div class="header">
-            <h2> Title </h2>
-            <h3> Creation Date </h3>
+            <h2 id="capsuleTitle"> Title </h2>
+            <h3 id="capsuleCreationDate"> Creation Date </h3>
         </div>
 
         <div class="capsuleStuff">
@@ -49,6 +55,10 @@
             </div>
         </div>
     </div>
+    <div class="capsuleCountdown">
 
+    </div>
+
+    <script src="/capsule.js"></script>
 </body>
 </html>
