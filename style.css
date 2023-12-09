@@ -1,9 +1,3 @@
-html, body {
-    width: 100%;
-    overflow-x: clip;
-    background-color: #242424;
-}
-
 .grid {
     display: grid;
     width: 60%;
@@ -30,7 +24,7 @@ html, body {
 h1 {
     color: white;
     font-size: 8vw;
-    line-height: 6.5vw;
+    line-height: 7vw;
     margin: 0 0 25px;
 }
 
@@ -40,18 +34,23 @@ h1 {
     padding: 10px;
     text-align: left;
     line-height: 0;
-    border: 3px solid transparent;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    font-size: 1.5vw;
+
+    background-color: white;
+    border: 0;
+    border-radius: 25px;
+
+    /* border: 3px solid transparent;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
     background-color: transparent;
     color: white;
     border-image: -webkit-linear-gradient(right, magenta, blue);
     border-image-slice: 1;
+    background-clip: padding-box, border-box; */
 }
 
 .gridRight button:hover {
     background-image: linear-gradient(to right, blue, magenta);
-    transition-property: background-image;
-    transition-timing-function: ease-in-out;
-    transition-duration: 5s;
 }

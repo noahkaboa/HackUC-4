@@ -1,0 +1,43 @@
+html, body {
+    width: 100%;
+    overflow-x: clip;
+    background-color: #242424;
+}
+
+/* font faces */
+
+@font-face {
+    font-family: insanibu;
+    src: url(fonts/Insanibu.ttf);
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url(fonts/LEMONMILK-Medium.otf);
+}
+
+@font-face {
+    font-family: rns;
+    src: url(fonts/RNS-B.ttf);
+}
+
+@font-face {
+    font-family: gobold;
+    src: url(fonts/Gobold\ Bold.otf);
+}
+
+@font-face {
+    font-family: comfortaa;
+    src: url(fonts/Comfortaa-VariableFont_wght.ttf);
+}
+
+
+/* text */
+
+h1 {
+    font-family: lemonmilk !important;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
