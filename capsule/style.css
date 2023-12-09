@@ -35,6 +35,19 @@ h1 {
       lightgray;
     margin: auto;
     margin-bottom: 1.5vw;
+    transition: background-image 250ms;
+}
+
+.cylinder:hover {
+    /* background: 
+      radial-gradient(50% 40px at 50% 40px, #0003 99.99%, #0000 0),
+      radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
+      linear-gradient(magenta, blue); */
+      background-image:
+      radial-gradient(50% 40px at 50% 40px, #0003 99.99%, #0000 0),
+      radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
+      linear-gradient(magenta, blue);
+      
 }
 
 .viewCapsule {
