@@ -37,14 +37,20 @@ h1 {
 .gridRight button {
     width: 30vw;
     height: 30px;
-    background-color: white;
-    border-radius: 10px;
+    padding: 10px;
     text-align: left;
-    border: 0;
+    line-height: 0;
+    border: 3px solid transparent;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    border-image: -webkit-linear-gradient(right, magenta, blue);
+    border-image-slice: 1;
 }
 
 .gridRight button:hover {
-    background-image: linear-gradient(to right, magenta, blue);
+    background-image: linear-gradient(to right, blue, magenta);
     transition-property: background-image;
     transition-timing-function: ease-in-out;
     transition-duration: 5s;
