@@ -53,9 +53,9 @@ async function main(){
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             const countdownElement = document.getElementsByClassName("capsuleCountdown")[0]
-
+            const viewCapsule = document.getElementsByClassName("viewCapsule")[0]
             countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"
-
+            viewCapsule.style.display = "none";
             console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s")
         } else {
             clearInterval(countdown)

@@ -15,34 +15,34 @@
             <a href="?capsule=qdpeoh">
                 <div class="cylinder"></div>
             </a>
-            <h4> Title </h4>
-            <h5 class="createDate"> Creation Date </h5>
-            <h5 class="openDate"> Open Date </h5>
+            <h4 class="title"> Title </h4>
+            <h5 class="createDate"> Created </h5>
+            <h5 class="openDate"> Open </h5>
         </div>
         
         <div class="capsule2">
             <a href="?capsule=ptolrj">
                 <div class="cylinder"></div>
             </a>
-            <h4> Title </h4>
-            <h5 class="createDate"> Creation Date </h5>
-            <h5 class="openDate"> Open Date </h5>
+            <h4 class="title"> Title </h4>
+            <h5 class="createDate"> Created </h5>
+            <h5 class="openDate"> Open </h5>
         </div>
         
         <div class="capsule3">
             <a href="?capsule=ktaaio">
                 <div class="cylinder"></div>
             </a>
-            <h4> Title </h4>
-            <h5 class="createDate"> Creation Date </h5>
-            <h5 class="openDate"> Open Date </h5>
+            <h4 class="title"> Title </h4>
+            <h5 class="createDate"> Created </h5>
+            <h5 class="openDate"> Open </h5>
         </div>
     </div>
 
     <div class="viewCapsule">
         <div class="header">
             <h2 id="capsuleTitle"> Title </h2>
-            <h3 id="capsuleCreationDate"> Creation Date </h3>
+            <h3 id="capsuleCreationDate"> Created </h3>
         </div>
 
         <div class="capsuleStuff">
@@ -60,5 +60,59 @@
     </div>
 
     <script src="/capsule.js"></script>
+    <script>
+        async function stuff(){
+            const capsule1 = document.querySelector(".capsule1")
+            const capsule2 = document.querySelector(".capsule2")
+            const capsule3 = document.querySelector(".capsule3")
+            
+            const capsule1Stuff = await getCapsule("qdpeoh")
+            const capsule2Stuff = await getCapsule("ptolrj")
+            const capsule3Stuff = await getCapsule("ktaaio")
+    
+            capsule1.querySelector('.title').innerHTML = capsule1Stuff.title
+            capsule2.querySelector('.title').innerHTML = capsule2Stuff.title
+            capsule3.querySelector('.title').innerHTML = capsule3Stuff.title
+        
+            capsule1.querySelector('.createDate').innerHTML += new Date(capsule1Stuff.creation_date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+            capsule2.querySelector('.createDate').innerHTML += new Date(capsule2Stuff.creation_date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+            capsule3.querySelector('.createDate').innerHTML += new Date(capsule3Stuff.creation_date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+
+            capsule1.querySelector('.openDate').innerHTML += new Date(capsule1Stuff.date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+            capsule2.querySelector('.openDate').innerHTML += new Date(capsule2Stuff.date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+            capsule3.querySelector('.openDate').innerHTML += new Date(capsule3Stuff.date).toLocaleString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: 'EST',
+            })
+        }
+        stuff()
+    </script>
 </body>
 </html>
