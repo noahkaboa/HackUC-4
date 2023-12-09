@@ -11,13 +11,19 @@ async function getCapsule(capsule_id){
     return JSON.parse(capsule)
 }
 async function main(){
-
+    
     
     
     
     const capsule_param = new URLSearchParams(window.location.search);
     
     const capsuleObj = (capsule_param.has('capsule')) ? await getCapsule(capsule_param.get('capsule')) : "Error: Wrong params"
+
+    if (capsuleObj === "Error: Wrong params"){
+        const viewCapsule = document.getElementsByClassName("viewCapsule")[0]
+        viewCapsule.style.display = "none";
+        return 0
+    }
 
     console.log(capsuleObj)
     const capsuleDate = new Date(capsuleObj.date)
@@ -54,8 +60,8 @@ async function main(){
 
             const countdownElement = document.getElementsByClassName("capsuleCountdown")[0]
             const viewCapsule = document.getElementsByClassName("viewCapsule")[0]
-            countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"
             viewCapsule.style.display = "none";
+            countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"
             console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s")
         } else {
             clearInterval(countdown)
