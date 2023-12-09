@@ -1,18 +1,17 @@
+async function getCapsule(capsule_id){
+    const url = new URL("https://time.noahkaboa.workers.dev/")
+    url.searchParams.set("capsule", capsule_id)
+    
+    const capsules = ["qdpeoh", "ptolrj", "ktaaio"]
+    if (!capsules.includes(capsule_id)){
+        alert("Error! Not a valid time capsule")
+    }
+    
+    const capsule = await fetch(url).then(r => r.text())
+    return JSON.parse(capsule)
+}
 async function main(){
 
-    
-    async function getCapsule(capsule_id){
-        const url = new URL("https://time.noahkaboa.workers.dev/")
-        url.searchParams.set("capsule", capsule_id)
-        
-        const capsules = ["qdpeoh", "ptolrj", "ktaaio"]
-        if (!capsules.includes(capsule_id)){
-            alert("Error! Not a valid time capsule")
-        }
-        
-        const capsule = await fetch(url).then(r => r.text())
-        return JSON.parse(capsule)
-    }
     
     
     
@@ -20,14 +19,25 @@ async function main(){
     
     const capsuleObj = (capsule_param.has('capsule')) ? await getCapsule(capsule_param.get('capsule')) : "Error: Wrong params"
 
-    
-    const capsuleDate = new Date(capsuleObj.date)
-    const capsuleCreation = new Date(capsuleObj.creation_date)
+    console.log(capsuleObj)
+    const capsuleDate = new Date(capsuleObj.date).toLocaleString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        timeZone: 'EST',
+    })
+    const capsuleCreation = new Date(capsuleObj.creation_date).toLocaleString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        timeZone: 'EST',
+    }
+    )
     const capsuleTitle = capsuleObj.title
     const capsuleText = capsuleObj.text
     const capsuleImg = capsuleObj.img_link
     
-    console.log(capsuleDate)
+   
 
 
     let capsuleUnlocked = false
@@ -49,7 +59,19 @@ async function main(){
         } else {
             clearInterval(countdown)
             console.log("All done")
-            //edit and unlock    
+            //edit and unlock   
+            const htmlTitle = document.getElementById("capsuleTitle")
+            const creationText = document.getElementById("capsuleCreationDate")
+            const htmlText = document.getElementsByClassName("capsuleText")[0]
+
+            let elem = document.createElement("img")
+            document.getElementsByClassName("capsuleImage")[0].appendChild(elem)
+            
+            
+            htmlTitle.innerHTML = capsuleTitle
+            creationText.innerHTML = capsuleCreation
+            htmlText.innerHTML = capsuleText
+            elem.src = capsuleImg
         }
     
     }, 1000)
